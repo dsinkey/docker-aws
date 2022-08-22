@@ -9,15 +9,14 @@ before_install:
 script:
   - docker run -e CI=true dsinkey/docker-aws npm run test
 
-  depoly:
-   provider: elasticbeanstalk
-   region: "us-east-2"
-   app: docker-aws
-   env: "Dockeraws-env"
-   bucket_name: "elasticbeanstalk-us-east-2-562644066414"
-   bucket_path: "docker-react"
-   on:
+depoly:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: docker-aws
+  env: 'Dockeraws-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-562644066414'
+  bucket_path: 'docker-react'
+  on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
-
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: '$AWS_SECRET_KEY'
